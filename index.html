@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Counter</title>
+    <style>
+      .container h1,
+      .btns {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+      h1 {
+        text-align: center;
+        font-size: 4rem;
+      }
+      h2 {
+        text-align: center;
+        font-size: 8rem;
+      }
+      button {
+        margin: 20px 10px 0 10px;
+      }
+    </style>
+    <script
+      src="https://kit.fontawesome.com/c6536ee7f7.js"
+      crossorigin="anonymous"
+    ></script>
+  </head>
+  <body>
+    <h2>Counter + -</h2>
+    <div class="container">
+      <h1 id="num">0</h1>
+      <div class="btns">
+        <button class="inc"><i class="fa-solid fa-plus"></i></button>
+        <button class="reset">RESET</button>
+        <button class="dec"><i class="fa-solid fa-minus"></i></button>
+      </div>
+    </div>
+    <script>
+      let numContainer = document.getElementById("num");
+      let value = 0;
+      let btnInc = document.querySelector(".inc");
+      let btnDec = document.querySelector(".dec");
+      let btnReset = document.querySelector(".reset");
+      btnInc.addEventListener("click", () => {
+        value++;
+        numContainer.textContent = value;
+      });
+      btnDec.addEventListener("click", () => {
+        if (!!value) {
+          value--;
+        }
+        numContainer.textContent = value;
+      });
+      btnReset.addEventListener("click", () => {
+        value = 0;
+        numContainer.textContent = value;
+      });
+    </script>
+  </body>
+</html>
